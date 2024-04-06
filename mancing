@@ -27,7 +27,7 @@ if npc then
     end
 end
 
-wait()
+wait(1)
 
 -- Check if Criminal NPCs exist before starting the looped teleportation
 if game:GetService("Workspace").Lives:FindFirstChild("Criminal31")
