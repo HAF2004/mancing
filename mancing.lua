@@ -1,3 +1,61 @@
--- Lua simple XOR encrypt by Ganlv
--- https://github.com/ganlvtech/lua-simple-encrypt
-key="PASSWORD"local a=load((function(b,c)function bxor(d,e)local f={{0,1},{1,0}}local g=1;local h=0;while d>0 or e>0 do h=h+f[d%2+1][e%2+1]*g;d=math.floor(d/2)e=math.floor(e/2)g=g*2 end;return h end;local i=function(b)local j={}local k=1;local l=b[k]while l>=0 do j[k]=b[l+1]k=k+1;l=b[k]end;return j end;local m=function(b,c)if#c<=0 then return{}end;local k=1;local n=1;for k=1,#b do b[k]=bxor(b[k],string.byte(c,n))n=n+1;if n>#c then n=1 end end;return b end;local o=function(b)local j=""for k=1,#b do j=j..string.char(b[k])end;return j end;return o(m(i(b),c))end)({904,527,701,909,462,914,927,596,846,964,969,866,613,568,648,972,923,528,560,586,962,539,594,465,480,836,1013,763,852,683,1016,903,999,653,881,517,576,470,780,841,697,953,666,989,592,612,983,492,740,941,944,845,689,667,742,761,790,538,951,849,819,992,859,756,593,561,472,456,496,532,813,862,505,899,625,826,954,657,631,473,949,1027,746,695,630,506,656,855,987,774,544,661,809,665,791,797,769,795,704,511,535,706,534,693,1025,805,583,715,504,1005,998,891,485,980,997,599,798,572,1014,524,977,502,486,1035,916,971,751,818,710,650,563,894,948,591,558,520,885,590,853,837,946,629,880,717,545,985,664,481,555,924,915,606,815,603,982,550,600,884,993,830,958,1000,623,886,619,503,883,814,975,530,960,476,860,817,755,725,553,739,694,754,942,770,896,789,1037,509,688,930,912,994,786,491,945,1008,835,887,1033,878,783,598,644,483,512,869,627,921,513,785,767,961,676,792,778,863,734,1022,963,646,1010,768,779,1011,536,1001,508,733,475,876,828,873,494,926,928,708,632,802,811,556,610,865,1018,889,731,854,775,659,722,510,728,934,892,893,477,929,931,727,838,736,463,760,604,547,771,686,879,908,957,622,581,478,824,562,658,834,794,720,461,641,729,724,707,959,965,759,1023,737,744,911,574,757,677,713,482,570,812,933,458,672,721,585,488,668,611,670,803,588,649,747,655,635,628,584,974,1003,888,776,690,691,990,626,905,808,831,1028,489,718,935,732,714,900,548,716,947,540,920,607,466,875,918,864,549,943,621,840,678,719,995,970,772,741,479,551,782,968,800,468,897,856,571,956,543,913,566,726,660,546,595,681,851,464,1020,976,662,967,640,823,842,647,827,624,868,533,902,1038,638,1026,673,766,487,467,799,796,637,870,674,821,552,516,1002,675,917,848,577,825,940,616,816,906,493,573,569,712,614,526,679,988,557,793,1032,867,922,745,523,575,784,514,471,618,643,820,844,601,652,850,822,498,501,497,531,696,829,615,877,810,495,680,871,1007,1021,642,991,700,474,1015,764,-1,12,46,22,140,131,23,30,71,5,7,19,70,5,246,79,96,29,15,23,93,3,1,40,0,23,84,123,50,197,11,5,80,51,28,152,10,14,82,83,27,23,24,15,194,132,92,20,31,30,123,31,177,67,14,75,29,0,2,107,7,102,13,58,196,71,26,182,6,2,198,102,14,80,122,24,2,1,71,16,23,81,231,83,7,82,253,49,60,65,66,14,29,12,34,16,10,123,34,229,66,9,23,65,164,99,65,31,13,94,191,4,154,10,73,6,17,77,92,29,5,20,33,126,216,143,72,57,10,73,23,110,226,12,72,80,28,30,65,10,13,10,36,10,72,26,98,173,18,29,231,98,12,213,95,12,65,14,31,120,73,3,125,1,29,9,2,1,25,23,12,69,7,7,94,29,7,99,162,64,6,59,26,29,141,6,1,4,28,10,175,67,91,67,8,0,135,6,107,102,29,6,6,54,6,82,3,19,19,89,2,71,79,71,98,35,9,91,12,7,98,7,96,23,106,27,15,113,10,182,182,24,67,10,79,22,79,149,69,8,22,2,31,129,62,110,10,112,7,8,30,29,28,107,116,32,216,84,109,19,5,68,95,27,19,7,32,13,54,10,69,1,10,2,7,139,69,37,83,10,213,4,70,76,13,59,0,82,10,67,102,25,10,50,25,186,12,173,147,29,6,90,107,235,76,51,93,135,22,7,110,8,27,68,34,29,8,62,224,24,82,10,116,19,67,4,40,30,46,22,31,15,244,106,69,69,6,54,15,26,13,31,69,82,67,5,220,109,7,217,14,245,185,0,19,5,123,5,105,25,123,23,2,5,69,11,110,26,5,6,1,16,32,66,6,15,27,128,230,4,27,65,86,31,228,18,10,6,158,105,89,27,241,79,84,0,82,7,88,0,25,10,44,28,84,19,52,98,11,74,25,13,110,51,9,4,55,19,95,199,12,84,62,77,2,81,96,85,6,6,82,22,72,8,8,168,10,0,22,13,188,16,11,84,18,12,141,65,15,30,34,3,40,0,5,32,15,30,0,79,105,6,22,12,81,67,3,123,82,70,225,91,52,91,71,5,4,39,75,0,77,251,84,228,34,19,5,23,3,73,11,70,12,7,23,126,90,147,4,26,107,69,10,23,21,65,14,5,1,21,26,196,29,49,61,74,6,86,83,91,6,52,31,243,200,4,42,12,0,220,81,27,6,98,52,7,64,86,7,63,26,201,27,15,29,15,95,106,65,16,63,69,2,4,72,69,94,179,29,48,1,67,187,82,80,71,31,30,91,30,62,5,15,1,255,68,167,13,82,32,5,27,62,38},key))if a then a()else print("WRONG PASSWORD!")end
+local player = game.Players.LocalPlayer
+local npc = game:GetService("Workspace").NPC.Kuru
+
+if npc then
+    local humanoidRootPart = npc:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart then
+        player.Character:MoveTo(humanoidRootPart.Position)
+        local Found = nil
+        for _, v in pairs(npc:GetDescendants()) do
+            if v:IsA("ProximityPrompt") then
+                Found = v
+                break
+            end
+        end
+        if fireproximityprompt then
+            if Found == nil then
+                print("Not Found")
+                return
+            end
+            for i = 1, 2 do
+                fireproximityprompt(Found)
+                task.wait(0.3)
+            end
+        else
+            warn("Exploit doesn't support")
+        end
+    end
+end
+
+wait(1)
+
+if game:GetService("Workspace").Lives:FindFirstChild("Criminal31")
+    and game:GetService("Workspace").Lives:FindFirstChild("Criminal32")
+    and game:GetService("Workspace").Lives:FindFirstChild("Criminal33")
+    and game:GetService("Workspace").Lives:FindFirstChild("Criminal34")
+    and game:GetService("Workspace").Lives:FindFirstChild("Criminal35") then
+
+    while true do
+        -- Teleport player to Criminal31
+        game.Players.LocalPlayer.Character:MoveTo(game:GetService("Workspace").Lives.Criminal31.Torso.Position)
+        wait(0.5) -- Wait for 1 second before teleporting again
+
+        -- Teleport player to Criminal32
+        game.Players.LocalPlayer.Character:MoveTo(game:GetService("Workspace").Lives.Criminal32.Torso.Position)
+        wait(0.5) -- Wait for 1 second before teleporting again
+
+        -- Teleport player to Criminal33
+        game.Players.LocalPlayer.Character:MoveTo(game:GetService("Workspace").Lives.Criminal33.Torso.Position)
+        wait(0.5) -- Wait for 1 second before teleporting again
+
+        -- Teleport player to Criminal34
+        game.Players.LocalPlayer.Character:MoveTo(game:GetService("Workspace").Lives.Criminal34.Torso.Position)
+        wait(0.5) -- Wait for 1 second before teleporting again
+
+        -- Teleport player to Criminal35
+        game.Players.LocalPlayer.Character:MoveTo(game:GetService("Workspace").Lives.Criminal35.Torso.Position)
+        wait(0.5) -- Wait for 1 second before looping back to Criminal31
+    end
+else
+    print("Criminal NPCs not found, looped teleportation cancelled.")
+end
