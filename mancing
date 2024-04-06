@@ -34,7 +34,8 @@ if game:GetService("Workspace").Lives:FindFirstChild("Criminal31")
     and game:GetService("Workspace").Lives:FindFirstChild("Criminal32")
     and game:GetService("Workspace").Lives:FindFirstChild("Criminal33")
     and game:GetService("Workspace").Lives:FindFirstChild("Criminal34")
-    and game:GetService("Workspace").Lives:FindFirstChild("Criminal35") then
+    and game:GetService("Workspace").Lives:FindFirstChild("Criminal35")
+then
 
     while true do
         -- Teleport player to Criminal31
